@@ -1123,9 +1123,9 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS Y_BED_SIZE
+#define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 390
+#define Z_MAX_POS 400
 
 /**
  * Software Endstops
@@ -1153,7 +1153,7 @@
 #endif
 
 #if EITHER(MIN_SOFTWARE_ENDSTOPS, MAX_SOFTWARE_ENDSTOPS)
-  #define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
+  //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
 #endif
 
 /**
@@ -1388,7 +1388,7 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (50*60)
+#define HOMING_FEEDRATE_XY (25*60)
 #define HOMING_FEEDRATE_Z  (4*60)
 
 // Validate that endstops are triggered on homing moves
@@ -2068,10 +2068,10 @@
 // SAV OLEd LCD module support using either SSD1306 or SH1106 based LCD modules
 //
 //#define SAV_3DGLCD
-//#if ENABLED(SAV_3DGLCD)
-  //#define U8GLIB_SSD1306
+#if ENABLED(SAV_3DGLCD)
+  #define U8GLIB_SSD1306
   //#define U8GLIB_SH1106
-//#endif
+#endif
 
 //
 // TinyBoy2 128x64 OLED / Encoder Panel
